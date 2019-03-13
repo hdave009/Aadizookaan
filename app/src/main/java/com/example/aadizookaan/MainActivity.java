@@ -8,19 +8,31 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String EXTRA_FILENAME = "PDF File needed";
+    public static final String EXTRA_LAST_PAGE = "Last page of PDF File";
+    public static final String EXTRA_FIRST_PAGE = "First page of PDF File";
+
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton button = (ImageButton) findViewById(R.id.button);
+        ImageButton gluscabiWindEagleButton = (ImageButton) findViewById(R.id.gluscabiWindEagleButton);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        gluscabiWindEagleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Gluscabi_and_the_Wind_Eagle.class);
-                startActivity(intent);
+                makeIntent("gluscabi.pdf");
             }
         });
     }
+    public void makeIntent(String fileName){
+        Intent intent = new Intent(MainActivity.this, Gluscabi_and_the_Wind_Eagle.class);
+        intent.putExtra("FILENAME", fileName);
+        startActivity(intent);
+
+    }
 }
+

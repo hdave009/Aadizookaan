@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/button"
+        android:id="@+id/gluscabiWindEagleButton"
         android:layout_width="169dp"
         android:layout_height="198dp"
         android:layout_alignParentLeft="true"

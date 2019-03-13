@@ -3,7 +3,6 @@ package com.example.aadizookaan;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
@@ -21,15 +20,18 @@ import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
 import java.io.IOException;
 import java.util.Locale;
 
+import static com.example.aadizookaan.MainActivity.EXTRA_FILENAME;
+
 public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
 
     // Declaring all the global variables that are used in this activity.
-
-    int startPage = -1; // Initializing the starting page variable for the PDF Text Stripper
-    int endPage = -1; // Initializing the starting page variable for the PDF Text Stripper
+    int startPage = 0; // Initializing the starting page variable for the PDF Text Stripper
+    int endPage = 0; // Initializing the starting page variable for the PDF Text Stripper
     TextToSpeech mTTS; // Declaring a Text To Speech Object
     int result;
-    String fileName = "gluscabi.pdf";
+    String fileName;
+    int lastPage = 13;
+    int firstPage = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,12 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         Button listenButton = (Button) findViewById(R.id.listenButton);
         Button stopSpeechButton = (Button) findViewById(R.id.stopSpeechButton);
         final TextView gluscabiTextView = (TextView) findViewById(R.id.gluscabiTextView);
+
+        try{
+            fileName = getIntent().getStringExtra("FILENAME");
+        }catch(Exception e){
+            Toast.makeText(this, "Error! No story has been loaded.", Toast.LENGTH_SHORT).show();
+        }
 
         // Initializing mTTS Text To Speech Object
 
@@ -76,12 +84,13 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         nextButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startPage = startPage + 1;
                 endPage = endPage + 1;
 
-                if (startPage > 13 && endPage > 13){
-                    startPage = 13;
-                    endPage = 13;
+                if (startPage >= lastPage && endPage >= lastPage){
+                    startPage = lastPage;
+                    endPage = lastPage;
                 }
 
                 gluscabiTextView.setText(getText(fileName, startPage, endPage));
@@ -97,12 +106,11 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
                 startPage = startPage - 1;
                 endPage = endPage - 1;
 
-                if (startPage <= 1 && endPage <=1){
-                    startPage = 1;
-                    endPage = 1;
+                if (startPage <= firstPage && endPage <= firstPage){
+                    startPage = firstPage;
+                    endPage = firstPage;
                 }
 
-               //getText("gluscabi.pdf", n, n2);
                gluscabiTextView.setText(getText(fileName, startPage, endPage));
             }
         });
