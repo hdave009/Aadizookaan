@@ -1,6 +1,5 @@
 package com.example.aadizookaan;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -20,8 +19,6 @@ import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
 import java.io.IOException;
 import java.util.Locale;
 
-import static com.example.aadizookaan.MainActivity.EXTRA_FILENAME;
-
 public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
 
     // Declaring all the global variables that are used in this activity.
@@ -30,8 +27,8 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
     TextToSpeech mTTS; // Declaring a Text To Speech Object
     int result;
     String fileName;
-    int lastPage = 13;
-    int firstPage = 1;
+    int lastPage;
+    int firstPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +43,11 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         Button stopSpeechButton = (Button) findViewById(R.id.stopSpeechButton);
         final TextView gluscabiTextView = (TextView) findViewById(R.id.gluscabiTextView);
 
+        // Recieves the PDF information (pdf name, last page, first page) from the MainActivity through an intent.
         try{
             fileName = getIntent().getStringExtra("FILENAME");
+            lastPage = Integer.parseInt(getIntent().getStringExtra("LASTPAGE"));
+            firstPage = Integer.parseInt(getIntent().getStringExtra("FIRSTPAGE"));
         }catch(Exception e){
             Toast.makeText(this, "Error! No story has been loaded.", Toast.LENGTH_SHORT).show();
         }
@@ -168,6 +168,10 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         return parsedText1;
     }
 
+    public void onDestroy() {
+        super.onDestroy();
+        mTTS.stop();
+    }
 }
 
 
