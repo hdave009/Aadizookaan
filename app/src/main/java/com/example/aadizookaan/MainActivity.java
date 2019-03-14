@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         // Image Buttons for each story.
         ImageButton gluscabiWindEagleButton = (ImageButton) findViewById(R.id.gluscabiWindEagleButton);
         ImageButton glooscapSummerButton = (ImageButton) findViewById(R.id.glooscapSummerButton);
-        ImageButton buffaloOnEarthButton = (ImageButton) findViewById(R.id.manSunButton);
+        ImageButton buffaloOnEarthButton = (ImageButton) findViewById(R.id.buffaloOnEarthButton);
         ImageButton milkyWayButton = (ImageButton) findViewById(R.id.milkyWayButton);
         ImageButton manSunButton = (ImageButton) findViewById(R.id.manSunButton);
         ImageButton gluscabiTobaccoButton = (ImageButton) findViewById(R.id.gluscabiTobaccoButton);
