@@ -67,7 +67,7 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         });
 
         // Setting the initial text
-        gluscabiTextView.setText("Click 'NEXT PAGE' to continue.");
+        gluscabiTextView.setText(getIntent().getStringExtra("TITLE"));
 
         // Takes user back to Main Activity with all the stories
 

@@ -8,6 +8,51 @@
     tools:context=".MainActivity">
 
     <ImageButton
+        android:id="@+id/milkyWayButton"
+        android:layout_width="169dp"
+        android:layout_height="198dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/storyofmilkyway"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buffaloOnEarthButton"
+        app:layout_constraintTop_toBottomOf="@+id/gluscabiWindEagleButton"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <ImageButton
+        android:id="@+id/buffaloOnEarthButton"
+        android:layout_width="169dp"
+        android:layout_height="198dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/howbuffalowerereleasedonearth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gluscabiWindEagleButton"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <ImageButton
         android:id="@+id/glooscapSummerButton"
         android:layout_width="169dp"
         android:layout_height="198dp"
@@ -25,8 +70,7 @@
         android:src="@drawable/howglooscapfoundsummer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gluscabiWindEagleButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.015" />
 
