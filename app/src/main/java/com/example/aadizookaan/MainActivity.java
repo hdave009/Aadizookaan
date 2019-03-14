@@ -16,8 +16,10 @@ public class MainActivity extends AppCompatActivity {
         // Image Buttons for each story.
         ImageButton gluscabiWindEagleButton = (ImageButton) findViewById(R.id.gluscabiWindEagleButton);
         ImageButton glooscapSummerButton = (ImageButton) findViewById(R.id.glooscapSummerButton);
-        ImageButton buffaloOnEarthButton = (ImageButton) findViewById(R.id.buffaloOnEarthButton);
+        ImageButton buffaloOnEarthButton = (ImageButton) findViewById(R.id.manSunButton);
         ImageButton milkyWayButton = (ImageButton) findViewById(R.id.milkyWayButton);
+        ImageButton manSunButton = (ImageButton) findViewById(R.id.manSunButton);
+        ImageButton gluscabiTobaccoButton = (ImageButton) findViewById(R.id.gluscabiTobaccoButton);
 
         // Stories in the form of PDF files should be saved in the assets folder under Aadizookaan > app > src > main > assets
         // To add a story, just create an OnClickListener for the ImageButton for the story and use the makeIntent() method to pass the information to the second activity.
@@ -47,6 +49,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeIntent("howthemilkywaybecametobecherokee.pdf", "How the Milky Way Came to Be", 3, 1);
+            }
+        });
+
+        manSunButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeIntent("themanwhoactedasthesun.pdf", "The Man Who Acted as The Sun", 4, 1);
+            }
+        });
+
+        gluscabiTobaccoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeIntent("How Gluskabe Stole Tobacco.pdf", "How Gluskabe Stole Tobacco", 9, 1);
             }
         });
 }

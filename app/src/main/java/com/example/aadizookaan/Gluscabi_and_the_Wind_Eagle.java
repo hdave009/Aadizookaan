@@ -37,13 +37,13 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
 
         PDFBoxResourceLoader.init(getApplicationContext());
         Button backButton = (Button) findViewById(R.id.backButton);
-        Button nextButton = (Button) findViewById(R.id.nextButton);
-        Button prevButton = (Button) findViewById(R.id.prevButton);
+        final Button nextButton = (Button) findViewById(R.id.nextButton);
+        final Button prevButton = (Button) findViewById(R.id.prevButton);
         Button listenButton = (Button) findViewById(R.id.listenButton);
         Button stopSpeechButton = (Button) findViewById(R.id.stopSpeechButton);
-        final TextView gluscabiTextView = (TextView) findViewById(R.id.gluscabiTextView);
+        final TextView storyView = (TextView) findViewById(R.id.storyView);
 
-        // Recieves the PDF information (pdf name, last page, first page) from the MainActivity through an intent.
+        // Recieves the PDF information (pdf name, story title, last page, first page) from the MainActivity through an intent.
         try{
             fileName = getIntent().getStringExtra("FILENAME");
             lastPage = Integer.parseInt(getIntent().getStringExtra("LASTPAGE"));
@@ -51,6 +51,7 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         }catch(Exception e){
             Toast.makeText(this, "Error! No story has been loaded.", Toast.LENGTH_SHORT).show();
         }
+
 
         // Initializing mTTS Text To Speech Object
 
@@ -67,7 +68,7 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         });
 
         // Setting the initial text
-        gluscabiTextView.setText(getIntent().getStringExtra("TITLE"));
+        storyView.setText(getIntent().getStringExtra("TITLE") + " - Tap 'Next' to Continue.");
 
         // Takes user back to Main Activity with all the stories
 
@@ -92,8 +93,7 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
                     startPage = lastPage;
                     endPage = lastPage;
                 }
-
-                gluscabiTextView.setText(getText(fileName, startPage, endPage));
+                storyView.setText(getText(fileName, startPage, endPage));
             }
         });
 
@@ -109,9 +109,9 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
                 if (startPage <= firstPage && endPage <= firstPage){
                     startPage = firstPage;
                     endPage = firstPage;
-                }
 
-               gluscabiTextView.setText(getText(fileName, startPage, endPage));
+                }
+               storyView.setText(getText(fileName, startPage, endPage));
             }
         });
 
@@ -138,7 +138,9 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
                 mTTS.stop();
             }
         });
+
     }
+
 
     // Method to extract story as a string from PDF file.
 
