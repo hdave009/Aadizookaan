@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/parent_layout" android:padding="30dp">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/coverimage"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/booktitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toEndOf="@+id/coverimage"
+        android:layout_toRightOf="@+id/coverimage"
+        android:text="SOMETHING SOMETHING NATIVE AMERICAN"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+
+
+</RelativeLayout>

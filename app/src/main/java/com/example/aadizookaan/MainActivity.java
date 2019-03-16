@@ -1,92 +1,65 @@
 package com.example.aadizookaan;
 
-import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<Drawable> mImageybois = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Image Buttons for each story.
-        ImageButton gluscabiWindEagleButton = (ImageButton) findViewById(R.id.gluscabiWindEagleButton);
-        ImageButton glooscapSummerButton = (ImageButton) findViewById(R.id.glooscapSummerButton);
-        ImageButton buffaloOnEarthButton = (ImageButton) findViewById(R.id.buffaloOnEarthButton);
-        ImageButton milkyWayButton = (ImageButton) findViewById(R.id.milkyWayButton);
-        ImageButton manSunButton = (ImageButton) findViewById(R.id.manSunButton);
-        ImageButton gluscabiTobaccoButton = (ImageButton) findViewById(R.id.gluscabiTobaccoButton);
-        Button sourceButton = (Button) findViewById(R.id.sourceButton);
-
+        initImages();
         // Stories in the form of PDF files should be saved in the assets folder under Aadizookaan > app > src > main > assets
         // To add a story, just create an OnClickListener for the ImageButton for the story and use the makeIntent() method to pass the information to the second activity.
+    }
 
-       sourceButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent sourceIntent = new Intent(MainActivity.this, SourcesActivity.class);
-               startActivity(sourceIntent);
-           }
-       });
+    private void initImages(){
+        mNames.add("Gluscabi and the Wind Eagle");
+        Drawable cover1 = getResources().getDrawable(R.drawable.thewindeagle);
+        mImageybois.add(cover1);
 
-        gluscabiWindEagleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeIntent("gluscabi.pdf", "Gluscabi and the Wind Eagle", 13, 1);
-            }
-        });
+        mNames.add("How Glooscap Found the Summer");
+        Drawable cover2 = getResources().getDrawable(R.drawable.howglooscapfoundsummer);
+        mImageybois.add(cover2);
 
-        glooscapSummerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeIntent("glooscapfoundsummer.pdf", "How Glooscap Found the Summer", 6, 1);
-            }
-        });
+        mNames.add("How the Buffalo Were Released On Earth");
+        Drawable cover3 = getResources().getDrawable(R.drawable.howbuffalowerereleasedonearth);
+        mImageybois.add(cover3);
 
-        buffaloOnEarthButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeIntent("buffaloreleasedonearth.pdf", "How the Buffalo Were Released On Earth", 6, 1);
-            }
-        });
+        mNames.add("How the Milky Way Came to Be");
+        Drawable cover4 = getResources().getDrawable(R.drawable.storyofmilkyway);
+        mImageybois.add(cover4);
 
-        milkyWayButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeIntent("howthemilkywaybecametobecherokee.pdf", "How the Milky Way Came to Be", 3, 1);
-            }
-        });
+        mNames.add("The Man Who Acted As the Sun");
+        Drawable cover5 = getResources().getDrawable(R.drawable.manwhoactedasthesun);
+        mImageybois.add(cover5);
 
-        manSunButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeIntent("themanwhoactedasthesun.pdf", "The Man Who Acted as The Sun", 4, 1);
-            }
-        });
+        mNames.add("How Gluskabe Stole Tobacco");
+        Drawable cover6 = getResources().getDrawable(R.drawable.tobacco);
+        mImageybois.add(cover6);
 
-        gluscabiTobaccoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeIntent("How Gluskabe Stole Tobacco.pdf", "How Gluskabe Stole Tobacco", 9, 1);
-            }
-        });
-}
-
-    // Method passes PDF information to the second activity.
-    public void makeIntent(String fileName, String storyTitle, int lastPage, int firstPage){
-        Intent intent = new Intent(MainActivity.this, Gluscabi_and_the_Wind_Eagle.class);
-        intent.putExtra("FILENAME", fileName);
-        intent.putExtra("LASTPAGE", String.valueOf(lastPage));
-        intent.putExtra("FIRSTPAGE", String.valueOf(firstPage));
-        intent.putExtra("TITLE", storyTitle);
-        startActivity(intent);
+        initRecyclerView();
 
     }
 
+    private void initRecyclerView(){
+        RecyclerView recyclerView = findViewById(R.id.booklist);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter( mNames, mImageybois, this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+    // Method passes PDF information to the second activity.
 }
 
