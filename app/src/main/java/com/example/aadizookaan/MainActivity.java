@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,9 +21,18 @@ public class MainActivity extends AppCompatActivity {
         ImageButton milkyWayButton = (ImageButton) findViewById(R.id.milkyWayButton);
         ImageButton manSunButton = (ImageButton) findViewById(R.id.manSunButton);
         ImageButton gluscabiTobaccoButton = (ImageButton) findViewById(R.id.gluscabiTobaccoButton);
+        Button sourceButton = (Button) findViewById(R.id.sourceButton);
 
         // Stories in the form of PDF files should be saved in the assets folder under Aadizookaan > app > src > main > assets
         // To add a story, just create an OnClickListener for the ImageButton for the story and use the makeIntent() method to pass the information to the second activity.
+
+       sourceButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent sourceIntent = new Intent(MainActivity.this, SourcesActivity.class);
+               startActivity(sourceIntent);
+           }
+       });
 
         gluscabiWindEagleButton.setOnClickListener(new View.OnClickListener() {
             @Override

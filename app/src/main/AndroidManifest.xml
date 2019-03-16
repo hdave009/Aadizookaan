@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SourcesActivity"></activity>
         <activity android:name=".Gluscabi_and_the_Wind_Eagle" />
         <activity android:name=".MainActivity">
             <intent-filter>
