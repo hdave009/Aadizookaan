@@ -79,8 +79,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public void makeIntent(String[] fileInfo){
-        String fileName = fileInfo[0];
-        String storyTitle = fileInfo[1];
+        String fileName = fileInfo[1];
+        String storyTitle = fileInfo[0];
         String lastPage = fileInfo[2];
         Intent intent = new Intent(mContext, Gluscabi_and_the_Wind_Eagle.class);
         intent.putExtra("FILENAME", fileName);
