@@ -50,6 +50,27 @@ public class MainActivity extends AppCompatActivity {
         Drawable cover6 = getResources().getDrawable(R.drawable.tobacco);
         mImageybois.add(cover6);
 
+        mNames.add("Indian Summer");
+        Drawable cover7 = getResources().getDrawable(R.drawable.indiansummermain);
+        mImageybois.add(cover7);
+
+        mNames.add("The Origin of the Thunderbird");
+        Drawable cover8 = getResources().getDrawable(R.drawable.thunderbird);
+        mImageybois.add(cover8);
+
+        mNames.add("The Dream Fast");
+        Drawable cover9 = getResources().getDrawable(R.drawable.dreamfast);
+        mImageybois.add(cover9);
+
+        mNames.add("The Great Flood of Ottawa");
+        Drawable cover10 = getResources().getDrawable(R.drawable.thegreatflood);
+        mImageybois.add(cover10);
+
+        mNames.add("White Owl and His Escape from the Witches and the Great Beasts");
+        Drawable cover11 = getResources().getDrawable(R.drawable.owlimage);
+        mImageybois.add(cover11);
+
+
         initRecyclerView();
 
     }
