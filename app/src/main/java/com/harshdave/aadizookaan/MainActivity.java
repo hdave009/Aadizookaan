@@ -1,4 +1,4 @@
-package com.example.aadizookaan;
+package com.harshdave.aadizookaan;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
         Drawable cover4 = getResources().getDrawable(R.drawable.storyofmilkyway);
         mImageybois.add(cover4);
 
-        mNames.add("The Man Who Acted As the Sun");
+        /*mNames.add("The Man Who Acted As the Sun");
         Drawable cover5 = getResources().getDrawable(R.drawable.manwhoactedasthesun);
-        mImageybois.add(cover5);
+        mImageybois.add(cover5);*/
 
         mNames.add("How Gluskabe Stole Tobacco");
         Drawable cover6 = getResources().getDrawable(R.drawable.tobacco);

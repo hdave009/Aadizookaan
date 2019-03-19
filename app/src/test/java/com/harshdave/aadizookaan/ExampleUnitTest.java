@@ -1,4 +1,4 @@
-package com.example.aadizookaan;
+package com.harshdave.aadizookaan;
 
 import org.junit.Test;
 

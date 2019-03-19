@@ -1,4 +1,4 @@
-package com.example.aadizookaan;
+package com.harshdave.aadizookaan;
 
 import android.content.Context;
 import android.content.Intent;
@@ -31,7 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         fileInfo.put("How Glooscap Found the Summer", new String[] {"How Glooscap Found the Summer", "glooscapfoundsummer.pdf", "6"});
         fileInfo.put("How the Buffalo Were Released On Earth", new String[] {"How the Buffalo Were Released On Earth","buffaloreleasedonearth.pdf", "6"});
         fileInfo.put("How the Milky Way Came to Be", new String[] {"How the Milky Way Came to Be", "howthemilkywaybecametobecherokee.pdf", "3"});
-        fileInfo.put("The Man Who Acted as The Sun", new String[] {"The Man Who Acted as The Sun", "themanwhoactedasthesun.pdf", "4"});
+        //fileInfo.put("The Man Who Acted as The Sun", new String[] {"The Man Who Acted as The Sun", "themanwhoactedasthesun.pdf", "4"});
         fileInfo.put("How Gluskabe Stole Tobacco", new String[] {"How Gluskabe Stole Tobacco", "How Gluskabe Stole Tobacco.pdf", "9"});
         fileInfo.put("Indian Summer", new String[] {"Indian Summer", "Indian Summer.pdf","4"});
         fileInfo.put("The Origin of the Thunderbird", new String[] {"The Origin of the Thunderbird","The Origin of the Thunderbird.pdf","3"});

@@ -1,4 +1,4 @@
-package com.example.aadizookaan;
+package com.harshdave.aadizookaan;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
