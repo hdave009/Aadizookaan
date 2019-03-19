@@ -13,7 +13,7 @@ public class SourcesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sources);
 
-        Button back = (Button) findViewById(R.id.back);
+        Button back = (Button) findViewById(R.id.zback);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
