@@ -52,7 +52,6 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
             Toast.makeText(this, "Error! No story has been loaded.", Toast.LENGTH_SHORT).show();
         }
 
-
         // Initializing mTTS Text To Speech Object
 
         mTTS = new TextToSpeech(getApplicationContext(), new OnInitListener() {
