@@ -29,6 +29,8 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
     String fileName;
     int lastPage;
     int firstPage;
+    String startPageString = Integer.toString(startPage);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         Button listenButton = (Button) findViewById(R.id.listenButton);
         Button stopSpeechButton = (Button) findViewById(R.id.stopSpeechButton);
         final TextView storyView = (TextView) findViewById(R.id.storyView);
+        final TextView pcTextView = (TextView) findViewById(R.id.pcTextView);
 
         // Recieves the PDF information (pdf name, story title, last page, first page) from the MainActivity through an intent.
         try{
@@ -51,6 +54,10 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         }catch(Exception e){
             Toast.makeText(this, "Error! No story has been loaded.", Toast.LENGTH_SHORT).show();
         }
+
+        final String lastPageString = Integer.toString(lastPage);
+
+        pcTextView.setText(startPageString + "/"+ lastPageString);
 
         // Initializing mTTS Text To Speech Object
 
@@ -92,7 +99,9 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
                     startPage = lastPage;
                     endPage = lastPage;
                 }
+                pcTextView.setText(Integer.valueOf(startPage) + "/"+ lastPageString);
                 storyView.setText(getText(fileName, startPage, endPage));
+
             }
         });
 
@@ -110,7 +119,9 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
                     endPage = firstPage;
 
                 }
-               storyView.setText(getText(fileName, startPage, endPage));
+                pcTextView.setText(Integer.valueOf(startPage) + "/"+ lastPageString);
+                storyView.setText(getText(fileName, startPage, endPage));
+
             }
         });
 
