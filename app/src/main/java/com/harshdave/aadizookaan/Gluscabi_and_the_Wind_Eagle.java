@@ -57,7 +57,7 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
 
         final String lastPageString = Integer.toString(lastPage);
 
-        pcTextView.setText(startPageString + "/"+ lastPageString);
+        pcTextView.setText(startPageString + "/" + lastPageString);
 
         // Initializing mTTS Text To Speech Object
 
