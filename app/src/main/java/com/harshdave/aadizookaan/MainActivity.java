@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         Drawable cover6 = getResources().getDrawable(R.drawable.tobacco);
         mImageybois.add(cover6);
 
-     /* mNames.add("Indian Summer");
+        mNames.add("Nibubalnoba - A Man's Summer");
         Drawable cover7 = getResources().getDrawable(R.drawable.indiansummermain);
-        mImageybois.add(cover7); */
+        mImageybois.add(cover7);
 
         mNames.add("The Origin of the Thunderbird");
         Drawable cover8 = getResources().getDrawable(R.drawable.thunderbird);

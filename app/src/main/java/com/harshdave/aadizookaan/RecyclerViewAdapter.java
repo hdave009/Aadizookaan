@@ -33,7 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         fileInfo.put("How the Milky Way Came to Be", new String[] {"How the Milky Way Came to Be", "howthemilkywaybecametobecherokee.pdf", "3"});
         //fileInfo.put("The Man Who Acted as The Sun", new String[] {"The Man Who Acted as The Sun", "themanwhoactedasthesun.pdf", "4"});
         fileInfo.put("How Gluskabe Stole Tobacco", new String[] {"How Gluskabe Stole Tobacco", "How Gluskabe Stole Tobacco.pdf", "9"});
-        fileInfo.put("Indian Summer", new String[] {"Indian Summer", "Indian Summer.pdf","4"});
+        fileInfo.put("Nibubalnoba - A Man's Summer", new String[] {"Nibubalnoba - A Man's Summer", "Indian Summer.pdf","4"});
         fileInfo.put("The Origin of the Thunderbird", new String[] {"The Origin of the Thunderbird","The Origin of the Thunderbird.pdf","3"});
         fileInfo.put("The Dream Fast", new String[] {"The Dream Fast", "thedreamfastojibway.pdf","6"});
         fileInfo.put("The Great Flood of Ottawa", new String[] {"The Great Flood of Ottawa","thegreatfloodottawa.pdf","5"});
