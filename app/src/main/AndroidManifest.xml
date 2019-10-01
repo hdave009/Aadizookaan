@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.harshdave.aadizookaan.SourcesActivity"></activity>
-        <activity android:name="com.harshdave.aadizookaan.Gluscabi_and_the_Wind_Eagle" />
+        <activity android:name="com.harshdave.aadizookaan.StoriesActivity" />
         <activity android:name="com.harshdave.aadizookaan.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

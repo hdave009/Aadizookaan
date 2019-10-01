@@ -19,7 +19,7 @@ import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
 import java.io.IOException;
 import java.util.Locale;
 
-public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
+public class StoriesActivity extends AppCompatActivity {
 
     // Declaring all the global variables that are used in this activity.
     int startPage = 0; // Initializing the starting page variable for the PDF Text Stripper
@@ -150,7 +150,6 @@ public class Gluscabi_and_the_Wind_Eagle extends AppCompatActivity {
         });
 
     }
-
 
     // Method to extract story as a string from PDF file.
 

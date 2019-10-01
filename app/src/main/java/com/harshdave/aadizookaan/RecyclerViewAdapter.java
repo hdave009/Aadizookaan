@@ -3,7 +3,6 @@ package com.harshdave.aadizookaan;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,16 +39,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         fileInfo.put("White Owl and His Escape from the Witches and the Great Beasts", new String[]{"White Owl and His Escape from the Witches and the Great Beasts","White Owl and His Escape from the Witches and the Great Beasts.pdf","7"});
     }
 
-    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_listitem, viewGroup, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) { ;
+    public void onBindViewHolder(ViewHolder viewHolder, final int i) { ;
 
         viewHolder.coverimage.setImageDrawable(mCoverimages.get(i));
 
@@ -74,7 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView booktitle;
         RelativeLayout parent_layout;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             coverimage = itemView.findViewById(R.id.coverimage);
             booktitle = itemView.findViewById(R.id.booktitle);
@@ -87,7 +85,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         String fileName = fileInfo[1];
         String storyTitle = fileInfo[0];
         String lastPage = fileInfo[2];
-        Intent intent = new Intent(mContext, Gluscabi_and_the_Wind_Eagle.class);
+        Intent intent = new Intent(mContext, StoriesActivity.class);
         intent.putExtra("FILENAME", fileName);
         intent.putExtra("LASTPAGE", lastPage);
         intent.putExtra("FIRSTPAGE", "1");
